@@ -1,4 +1,3 @@
-import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:flutter/services.dart';
 import 'package:permission_handler/permission_handler.dart';
@@ -12,7 +11,6 @@ class LocationController extends GetxController {
     super.onInit();
     startBackgroundService();
     _channel.setMethodCallHandler((call) async {
-      print(call.method);
       switch (call.method) {
         case 'onLocationUpdate':
           _lastLocation = call.arguments['location'];
